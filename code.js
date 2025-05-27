@@ -3,7 +3,11 @@
 let horaStr = prompt("Bienvenido/a! Por favor escriba una hora con formato hh (1-24) sin minutos", "13");
 
 try {
-  let hora = parseInt(horaStr)
+  let hora = parseInt(horaStr) // no da error si es texto
+  
+  if (isNaN(hora)) {
+    throw new Error("Es texto y no se puede pasar a número");
+  }
 
   if (hora > 6 && hora < 11) {
   console.log("Es desayuno");
@@ -15,7 +19,7 @@ try {
   console.log("Escriba otra hora, que la cocina está cerrada");
 }
 } catch {
-  
+  alert("Problema con la hora escrita. Debes introducir un número entero (1-24).")
 }
   
 
