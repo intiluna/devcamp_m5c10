@@ -1,0 +1,19 @@
+# Requisitos generales
+
+Ejercicio desarrollado con código 100% JavaScript (no se admitirá ningún otro lenguaje), ya que sera probado en CodePen
+
+Una vez realizado debe ser subido a tu Repositorio cuando este terminado y deberás abrir un ticket con el asunto Dinner Menu, para su posterior revisión
+
+Desarrollo del ejercicio: Deberas preguntar al usuario la hora y el formato en que lo deseas, de manera que a traves de condicionales y dependiendo de la hora puedas ofrecer algun menu (Desayuno, Comida y Cena)
+
+Cada menu debera estar compuesto por 3 platos, y cada plata con al menos 3 opciones
+
+Cada opcion debe mostrar con su precio Unitario
+
+Si el usuario se equivoca, debes gestionar ese error mostrandole un mensaje y repitiendole la pregunta
+
+La introducción de los datos por parte del usuario, NO deben ser sensibles a mayúsculas o minúsculas
+
+Crearas una caja de comentarios con 4 o 5 comentarios, a través de una función aleatoria, se lo imprimirás al usuario cada vez que escoja una opción correcta
+
+Una vez escogido sus 3 platos, deberás mostrar al final una factura detallado con cada uno de las opciones escogidas, su respectivo precio unitario y luego el total!!
