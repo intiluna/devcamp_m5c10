@@ -71,9 +71,18 @@ try {
 
   if (menuSeleccionado) {
     console.log("El menú actual es:", menuSeleccionado);
-    console.log("Opciones de primer plato son:", menuSeleccionado.primerPlato);
-    console.log("Primera opcion:", menuSeleccionado.primerPlato[1]);
-  } else {
+    //console.log("Opciones de primer plato son:", menuSeleccionado.primerPlato);
+    //console.log("Primera opcion:", menuSeleccionado.primerPlato[1]);
+
+    for (let plato in menuSeleccionado) {
+      console.log("Plato:", plato);
+      
+  
+    }
+  }
+  
+  
+  else {
     console.log("Escribe otra hora, que la cocina está cerrada");
   }
 } catch {
