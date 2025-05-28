@@ -1,5 +1,7 @@
 // Code tested using codepen.io
 // usando de referencia menu: https://codebilbao.es/wp-content/uploads/2021/06/180621.pdf
+// cena: https://web.ua.es/es/universidad-saludable/documentos/menus-saludables.pdf
+
 
 
 
@@ -33,10 +35,16 @@ let menuAlmuerzo = {
 };
 
 let menuCena = {
-  1:{"pescado": 9.0},
-  2:{"pollo": 8.5},
-  3:{"verduras": 7.0},
-  4:{"arroz": 6.0}
+  primerPlato:{ 1:{"Crema de calabaza": 8},
+                2:{"Ensalada cesar con aliño casero, pollo asado y picatostes": 7.0},
+                3:{"Menestra de verduras": 7.0},},
+  segundoPlato:{1:{"Pasta con alcachofa": 9.5},
+                2:{"Merluza al horno": 9.0},
+                3:{"Pollo al horno con arroz blanco": 11.0}},
+  postre:{1:{"Fruta del tiempo": 3.5},
+          2:{"Macedonia con ron": 3.0},
+          3:{"Yogurt natural, miel y nueces": 4.0},
+          }
 }
 
 
