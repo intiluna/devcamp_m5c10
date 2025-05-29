@@ -9,10 +9,11 @@ Tareas-seudocodigo:
 2. Con la hora se selecciona el menu correspondiente.ok
 3. Mostrar opciones de primer plato.ok
 4. Pedir al usuario escribir la seleccion la opcion del primer plato.ok
-5. Con el input, verificar y match de seleccion
-6. Guardar la seleccion en una lista (junto con el nombre del plato y precio)
-7. Mostrar la lista de opciones seleccionadas
+5. Con el input, verificar y match de seleccion.ok
+6. Guardar la seleccion en una lista (junto con el nombre del plato y precio).ok
+7. Mostrar la lista de opciones seleccionadas.ok
 8. Mostrar el precio total de la cuenta
+9. Agregar mensaje despues de cada seleccion que venga de un array de mensajes que se escogen aleatoriamente.
 
 Problemas-Aprendizaje:
 1. Usar parseInt para convertir string a entero no genera error si el string no es un numero, genera NAN y hay que crear el error.
@@ -21,7 +22,8 @@ Problemas-Aprendizaje:
 4. Usar Object.keys(obj) devuelve un array con las claves del objeto.
 5. Usar Object.keys(obj)[0] para acceder al primer elemento de lista de claves.
 6. do...while usar para comprobar que el usuario escribe los datos correctos.
-7. usar includes para comparar si un valor está en un array. Seria como usar isin en python.
+7. usar "includes" para comparar si un valor está en un array. Seria como usar isin en python.
+8. Usar "map" para extraer de cada elemento (objeto en nuestro caso) de un array y crea nuevo array con resultado
 
 // */
 
@@ -139,11 +141,19 @@ try {
                              precio: selPrecio });
     
       console.log(`Seleccion hecha para ${plato} es ${selNum} que es "${selNombre}" con precio ${selPrecio}€`);
-      console.log("Opciones del cliente:", opcionesCliente); // array de objectos
-
-      
+      console.log("Opciones del cliente:", opcionesCliente); // array de objectos     
   
     }
+    // mostrar opciones seleccionadas en mensaje de alert
+    const resumenLineas = opcionesCliente.map(o =>
+      `${o.plato} (id: ${o.selNum}): ${o.nombre} ---> ${o.precio}€`
+    );
+    alert(
+      "Gracias por confiar en nosotros, aqui esta su seleccion de menu:\n\n\n" +
+      resumenLineas.join("\n\n")
+    );
+
+
   }
   
   
