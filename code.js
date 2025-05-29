@@ -79,7 +79,7 @@ let menuAlmuerzo = {
 
 let menuCena = {
   primerPlato:{ 1:{"Crema de calabaza": 8},
-                2:{"Ensalada cesar con aliño casero, pollo asado y picatostes": 7.0},
+                2:{"Ensalada cesar con aliño casero y pollo asado": 7.0},
                 3:{"Menestra de verduras": 7.0},},
   segundoPlato:{1:{"Pasta con alcachofa": 9.5},
                 2:{"Merluza al horno": 9.0},
@@ -182,7 +182,8 @@ try {
     
     // mostrar opciones seleccionadas en mensaje de alert
     const resumenLineas = opcionesCliente.map(o =>
-      `${o.plato} (id: ${o.selNum}): ${o.nombre} ---> ${o.precio}€`
+      //`${o.plato} (id: ${o.selNum}): ${o.nombre} ---> ${o.precio}€`
+      `${o.nombre} ---> ${o.precio}€`
     );
 
     // calcular el total
