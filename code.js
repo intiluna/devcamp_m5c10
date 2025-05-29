@@ -2,7 +2,21 @@
 // usando de referencia menu: https://codebilbao.es/wp-content/uploads/2021/06/180621.pdf
 // cena: https://web.ua.es/es/universidad-saludable/documentos/menus-saludables.pdf
 
+/* 
+Tareas-seudocodigo:
 
+1. Pedir usuario hora
+2. Con la hora se selecciona el menu correspondiente
+3. Mostrar opciones de primer plato
+4. Pedir al usuario escribir la seleccion la opcion del primer plato
+5. Con el input, verificar y match de seleccion
+6. Guardar la seleccion en una lista (junto con el nombre del plato y precio)
+7. Mostrar la lista de opciones seleccionadas
+8. Mostrar el precio total de la cuenta
+
+
+
+*/
 
 
 let menuDesayuno = {
