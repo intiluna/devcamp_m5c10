@@ -13,7 +13,8 @@ Tareas-seudocodigo:
 6. Guardar la seleccion en una lista (junto con el nombre del plato y precio).ok
 7. Mostrar la lista de opciones seleccionadas.ok
 8. Mostrar el precio total de la cuenta.ok
-9. Agregar mensaje despues de cada seleccion que venga de un array de mensajes que se escogen aleatoriamente.
+9. Agregar mensaje despues de cada seleccion que venga de un array de mensajes que se escogen aleatoriamente.ok
+10. Opcional ofrecer extras (entrantes, helados) al final del menu.
 
 Problemas-Aprendizaje:
 1. Usar parseInt para convertir string a entero no genera error si el string no es un numero, genera NAN y hay que crear el error.
@@ -28,6 +29,23 @@ Problemas-Aprendizaje:
 10. Usar "toFixed(2)" para mostrar el total con dos decimales.
 
 // */
+
+
+let mensajeSeleccionPlato = [
+  "Excelente elección, ¡un plato delicioso!",
+  "¡Buen gusto! Este plato es uno de nuestros favoritos.",
+  "¡Has hecho una gran selección! Esperamos que lo disfrutes.",
+  "¡Muy bien! Este plato es muy popular entre nuestros clientes.",
+  "¡Perfecto! Seguro que te encantará este plato.",
+  "Me encanta ese plato, es rico y muy nutritivo."
+];
+
+// definimos funcion que aleatoriamente devuelve un mensaje de la lista
+function mensajeAleatorio() {
+  const index = Math.floor(Math.random() * mensajeSeleccionPlato.length);
+  //console.log("Mensaje aleatorio seleccionado:", index, mensajeSeleccionPlato[index]);
+  return mensajeSeleccionPlato[index];
+}
 
 
 let menuDesayuno = {
@@ -70,6 +88,16 @@ let menuCena = {
           2:{"Macedonia con ron": 3.0},
           3:{"Yogurt natural, miel y nueces": 4.0},
           }
+}
+
+let menuExtras = {
+  entrantes:{   1:{"Boquerones": 8},
+                2:{"Calamares en su tinta": 7.0},
+                3:{"Patatas bravas": 7.0},},
+  helados:{     1:{"Chocolate y pistacho": 9.5},
+                2:{"Manzanas con Vainilla": 9.0},
+                3:{"Almendra con galleta": 11.0}},
+  
 }
 
 
@@ -141,11 +169,17 @@ try {
                              selNum,
                              nombre: selNombre,
                              precio: selPrecio });
+      // mostrar mensaje aleatorio despues de cada seleccion
+      alert(mensajeAleatorio());
     
       console.log(`Seleccion hecha para ${plato} es ${selNum} que es "${selNombre}" con precio ${selPrecio}€`);
       console.log("Opciones del cliente:", opcionesCliente); // array de objectos     
   
     }
+    
+        
+
+    
     // mostrar opciones seleccionadas en mensaje de alert
     const resumenLineas = opcionesCliente.map(o =>
       `${o.plato} (id: ${o.selNum}): ${o.nombre} ---> ${o.precio}€`
