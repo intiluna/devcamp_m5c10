@@ -141,14 +141,14 @@ try {
 
       //mensaje de opciones de plato
       let mensaje = `Opciones de ${plato}:\n` + lineas.join("\n");
-      alert(mensaje);
+      //alert(mensaje);
 
       //pedir al usuario seleccionar una opcion con validacion
       const clavesCorrectas = Object.keys(opcionesPlato); // ej. ["1","2","3"]
       let seleccionStr;
       do {
 
-          seleccionStr = prompt(
+          seleccionStr = prompt(mensaje + "\n\n" +
           `Escribe el numero de opcion que prefieres ${plato} (${clavesCorrectas.join(", ")})`,
           clavesCorrectas[0]);
           
