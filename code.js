@@ -5,18 +5,23 @@
 /* 
 Tareas-seudocodigo:
 
-1. Pedir usuario hora
-2. Con la hora se selecciona el menu correspondiente
-3. Mostrar opciones de primer plato
+1. Pedir usuario hora.ok
+2. Con la hora se selecciona el menu correspondiente.ok
+3. Mostrar opciones de primer plato.ok
 4. Pedir al usuario escribir la seleccion la opcion del primer plato
 5. Con el input, verificar y match de seleccion
 6. Guardar la seleccion en una lista (junto con el nombre del plato y precio)
 7. Mostrar la lista de opciones seleccionadas
 8. Mostrar el precio total de la cuenta
 
+Problemas-Aprendizaje:
+1. Usar parseInt para convertir string a entero no genera error si el string no es un numero, genera NAN y hay que crear el error.
+2. Console.log acepta varios elementos pero no es el caso de Alert  que no acepta varios elementos.
+3. En un objeto dentro de un objeto, el valor de una clave que es un objeto se puede acceder con su respectiva clave de manera anidada.
+4. Usar Object.keys(obj) devuelve un array con las claves del objeto.
+5. Usar Object.keys(obj)[0] para acceder al primer elemento de un objeto.
 
-
-*/
+// */
 
 
 let menuDesayuno = {
@@ -89,7 +94,20 @@ try {
     //console.log("Primera opcion:", menuSeleccionado.primerPlato[1]);
 
     for (let plato in menuSeleccionado) {
-      console.log("Plato:", plato);
+      //console.log("Plato:", plato);
+      let opcionesPlato = menuSeleccionado[plato]; // da objeto de primerPlato, segundoPlato o postre
+      let lineas = [];
+
+      for (let id in opcionesPlato) {
+        let item = opcionesPlato[id];                    // valor de primera key (1) { "tostadas": 2.5 }
+        let nombre = Object.keys(item)[0];             // nos da primera key : "tostadas"
+        let precio = item[nombre];                     // usando nombre como key para sacar el valor que es el precio:2.5
+        lineas.push(`${id} : ${nombre} / ${precio}€`); // "1 / tostadas / 2.5€"
+      }
+
+      //mensaje
+      let mensaje = `Opciones de ${plato}:\n` + lineas.join("\n");
+      alert(mensaje);
       
   
     }
