@@ -20,6 +20,8 @@ Problemas-Aprendizaje:
 3. En un objeto dentro de un objeto, el valor de una clave que es un objeto se puede acceder con su respectiva clave de manera anidada.
 4. Usar Object.keys(obj) devuelve un array con las claves del objeto.
 5. Usar Object.keys(obj)[0] para acceder al primer elemento de lista de claves.
+6. do...while usar para comprobar que el usuario escribe los datos correctos.
+7. usar includes para comparar si un valor está en un array. Seria como usar isin en python.
 
 // */
 
@@ -109,11 +111,22 @@ try {
       let mensaje = `Opciones de ${plato}:\n` + lineas.join("\n");
       alert(mensaje);
 
-      //pedir al usuario seleccionar una opcion
-      let seleccionStr = prompt(
-        `Escribe el numero de opcion que prefieres ${plato} (${Object.keys(opcionesPlato)})`,
-        Object.keys(opcionesPlato)[0]
-      );
+      //pedir al usuario seleccionar una opcion con validacion
+      const clavesCorrectas = Object.keys(opcionesPlato); // ej. ["1","2","3"]
+      let seleccionStr;
+      do {
+
+          seleccionStr = prompt(
+          `Escribe el numero de opcion que prefieres ${plato} (${clavesCorrectas.join(", ")})`,
+          clavesCorrectas[0]);
+          
+          if (!clavesCorrectas.includes(seleccionStr)) {
+            alert("Error: Debes introducir un número entero (ejemplo: 1,2,3 o 4) segun opciones disponibles.");
+            alert(mensaje); 
+          }
+        } while (!clavesCorrectas.includes(seleccionStr));
+
+        
       let selNum = parseInt(seleccionStr);
       let selItem = opcionesPlato[selNum];
       let selNombre     = Object.keys(selItem)[0];
