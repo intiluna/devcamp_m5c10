@@ -12,7 +12,7 @@ Tareas-seudocodigo:
 5. Con el input, verificar y match de seleccion.ok
 6. Guardar la seleccion en una lista (junto con el nombre del plato y precio).ok
 7. Mostrar la lista de opciones seleccionadas.ok
-8. Mostrar el precio total de la cuenta
+8. Mostrar el precio total de la cuenta.ok
 9. Agregar mensaje despues de cada seleccion que venga de un array de mensajes que se escogen aleatoriamente.
 
 Problemas-Aprendizaje:
@@ -24,6 +24,8 @@ Problemas-Aprendizaje:
 6. do...while usar para comprobar que el usuario escribe los datos correctos.
 7. usar "includes" para comparar si un valor está en un array. Seria como usar isin en python.
 8. Usar "map" para extraer de cada elemento (objeto en nuestro caso) de un array y crea nuevo array con resultado
+9. Usar "reduce" para sumar todos los precios de un array de objetos. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
+10. Usar "toFixed(2)" para mostrar el total con dos decimales.
 
 // */
 
@@ -148,9 +150,13 @@ try {
     const resumenLineas = opcionesCliente.map(o =>
       `${o.plato} (id: ${o.selNum}): ${o.nombre} ---> ${o.precio}€`
     );
+
+    // calcular el total
+    const total = opcionesCliente.reduce((suma, o) => suma + o.precio, 0);
     alert(
-      "Gracias por confiar en nosotros, aqui esta su seleccion de menu:\n\n\n" +
-      resumenLineas.join("\n\n")
+      "Gracias por confiar en nosotros, aquí está su selección de menú:\n\n" +
+      resumenLineas.join("\n\n") +
+      `\n\nTotal a pagar: ${total.toFixed(2)}€`
     );
 
 
