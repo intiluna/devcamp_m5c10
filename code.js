@@ -8,7 +8,7 @@ Tareas-seudocodigo:
 1. Pedir usuario hora.ok
 2. Con la hora se selecciona el menu correspondiente.ok
 3. Mostrar opciones de primer plato.ok
-4. Pedir al usuario escribir la seleccion la opcion del primer plato
+4. Pedir al usuario escribir la seleccion la opcion del primer plato.ok
 5. Con el input, verificar y match de seleccion
 6. Guardar la seleccion en una lista (junto con el nombre del plato y precio)
 7. Mostrar la lista de opciones seleccionadas
@@ -115,11 +115,17 @@ try {
         Object.keys(opcionesPlato)[0]
       );
       let selNum = parseInt(seleccionStr);
-    
+      let selItem = opcionesPlato[selNum];
+      let selNombre     = Object.keys(selItem)[0];
+      let selPrecio     = selItem[selNombre];
+        
       // Guardar seleccion en array
-      opcionesCliente.push({ plato, selNum });
+      opcionesCliente.push({ plato,
+                             selNum,
+                             nombre: selNombre,
+                             precio: selPrecio });
     
-      console.log(`Seleccio hecha para ${plato} es ${selNum}`);
+      console.log(`Seleccion hecha para ${plato} es ${selNum} que es "${selNombre}" con precio ${selPrecio}€`);
       console.log("Opciones del cliente:", opcionesCliente); // array de objectos
 
       
