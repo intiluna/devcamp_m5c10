@@ -161,7 +161,7 @@ try {
           
           if (!clavesCorrectas.includes(seleccionStr)) {
             alert("Error: Debes introducir un número entero (ejemplo: 1,2,3 o 4) segun opciones disponibles.");
-            alert(mensaje); 
+            //alert(mensaje); 
             
           }
         } while (!clavesCorrectas.includes(seleccionStr));
