@@ -19,7 +19,7 @@ Problemas-Aprendizaje:
 2. Console.log acepta varios elementos pero no es el caso de Alert  que no acepta varios elementos.
 3. En un objeto dentro de un objeto, el valor de una clave que es un objeto se puede acceder con su respectiva clave de manera anidada.
 4. Usar Object.keys(obj) devuelve un array con las claves del objeto.
-5. Usar Object.keys(obj)[0] para acceder al primer elemento de un objeto.
+5. Usar Object.keys(obj)[0] para acceder al primer elemento de lista de claves.
 
 // */
 
@@ -67,7 +67,7 @@ let menuCena = {
 }
 
 
-let opciones_cliente = []
+let opcionesCliente = []
 
 
 let horaStr = prompt("Bienvenido/a! Por favor escriba una hora con formato hh (1-24) sin minutos", "13");
@@ -105,9 +105,23 @@ try {
         lineas.push(`${id} : ${nombre} / ${precio}€`); // "1 / tostadas / 2.5€"
       }
 
-      //mensaje
+      //mensaje de opciones de plato
       let mensaje = `Opciones de ${plato}:\n` + lineas.join("\n");
       alert(mensaje);
+
+      //pedir al usuario seleccionar una opcion
+      let seleccionStr = prompt(
+        `Escribe el numero de opcion que prefieres ${plato} (${Object.keys(opcionesPlato)})`,
+        Object.keys(opcionesPlato)[0]
+      );
+      let selNum = parseInt(seleccionStr);
+    
+      // Guardar seleccion en array
+      opcionesCliente.push({ plato, selNum });
+    
+      console.log(`Seleccio hecha para ${plato} es ${selNum}`);
+      console.log("Opciones del cliente:", opcionesCliente); // array de objectos
+
       
   
     }
