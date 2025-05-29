@@ -31,6 +31,12 @@ Problemas-Aprendizaje:
 // */
 
 
+let horarios = {
+  desayuno: { inicio: 6, fin: 11 },
+  almuerzo: { inicio: 12, fin: 15 },
+  cena: { inicio: 18, fin: 23 }
+};
+
 let mensajeSeleccionPlato = [
   "Excelente elección, ¡un plato delicioso!",
   "¡Buen gusto! Este plato es uno de nuestros favoritos.",
@@ -111,19 +117,20 @@ try {
   if (isNaN(hora)) throw new Error();
 
   let menuSeleccionado;
-  if (hora > 6 && hora < 11) {
+  if (hora > 6 && hora <= 11) {
     menuSeleccionado = menuDesayuno;
     console.log("Es desayuno");
-  } else if (hora > 11 && hora < 15) {
+  } else if (hora > 11 && hora <= 15) {
     menuSeleccionado = menuAlmuerzo;
     console.log("Es almuerzo");
-  } else if (hora > 18 && hora < 23) {
+  } else if (hora >= 18 && hora < 23) {
     menuSeleccionado = menuCena;
     console.log("Es cena");
   }
 
   if (menuSeleccionado) {
     console.log("El menú actual es:", menuSeleccionado);
+
     //console.log("Opciones de primer plato son:", menuSeleccionado.primerPlato);
     //console.log("Primera opcion:", menuSeleccionado.primerPlato[1]);
 
@@ -155,6 +162,7 @@ try {
           if (!clavesCorrectas.includes(seleccionStr)) {
             alert("Error: Debes introducir un número entero (ejemplo: 1,2,3 o 4) segun opciones disponibles.");
             alert(mensaje); 
+            
           }
         } while (!clavesCorrectas.includes(seleccionStr));
 
@@ -200,6 +208,12 @@ try {
   
   else {
     console.log("Escribe otra hora, que la cocina está cerrada");
+    // advertir al usuario que la cocina está cerrada y cual es el horario
+    let horariosStr = `Horarios:\n` +
+                      `Desayuno: ${horarios.desayuno.inicio} - ${horarios.desayuno.fin}\n` +
+                      `Almuerzo: ${horarios.almuerzo.inicio} - ${horarios.almuerzo.fin}\n` +
+                      `Cena: ${horarios.cena.inicio} - ${horarios.cena.fin}`;
+    alert("Lo sentimos, la cocina está cerrada para esa hora. Por favor, cambia la hora.\n" + horariosStr);
   }
 } catch {
   alert("Problema con la hora escrita. Debes introducir un número entero (1-24).");
